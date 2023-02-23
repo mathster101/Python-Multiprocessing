@@ -1,6 +1,13 @@
 import multiprocessing as mp
 import time as t
 import os
+
+####################
+#only works with standard dtypes...no classes...
+
+#can technically work on images by serializing to a 1-d array first
+####################
+
 def dummy(shared_var):
     for i in range(5):
         with shared_var.get_lock():
@@ -11,7 +18,7 @@ def dummy(shared_var):
 
 
 if __name__ == '__main__':
-    shared_var = mp.Value('f',0)# float and start with va zero
+    shared_var = mp.Value('f',0)# float and start with value zero
     # or shared_var = mp.Array('i',[1,2,3,4]) for shared array
     procs = []
     for n in range(10):
