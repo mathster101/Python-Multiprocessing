@@ -32,6 +32,6 @@ if __name__ == '__main__':
     talker_proc1.start()
     talker_proc2.start()
 
-    listener_proc.join()
-    talker_proc1.join()
-    talker_proc2.join()
+    listener_proc.join()# only the listener really needs to be join()ed here tbh
+    # talker_proc1.join()
+    # talker_proc2.join()
