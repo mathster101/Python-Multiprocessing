@@ -2,6 +2,7 @@ import multiprocessing as mp
 import time as t
 from random import randint as ri
 import os
+
 def listener(msg_queue):
     start_time = t.time()
     while t.time() - start_time < 60:#stay active for one minute!
